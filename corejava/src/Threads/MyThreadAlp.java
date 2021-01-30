@@ -1,0 +1,25 @@
+package Threads;
+
+public class MyThreadAlp extends Thread {
+	public static void main(String args[]) {
+		String data = "Java is a programming language";
+
+		Runnable  r = () -> {
+
+			for (char ch:  data.toCharArray()) {
+				System.out.print(ch);
+				try {
+					Thread.sleep(250);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println();
+		};
+
+		Thread  th1 = new Thread(r);
+		th1.start();
+	}
+}
+
+
