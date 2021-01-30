@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="emp1" class="SetConstrObj.Employee">
+		<constructor-arg value="Dhanush" />
+		<constructor-arg value="24" />
+		<constructor-arg value="CSE" />
+	</bean>
+
+	<bean id="emp2" class="SetConstrObj.Employee">
+		<constructor-arg value="Hari" />
+		<constructor-arg value="24" />
+		<constructor-arg value="Mech" />
+	</bean>
+
+	<bean id="emp3" class="SetConstrObj.Employee">
+		<constructor-arg value="Dhanush" />
+		<constructor-arg value="24" />
+		<constructor-arg value="CSE" />
+	</bean>
+
+	<bean id="uservice" class="SetConstrObj.Userservice">
+		<constructor-arg>
+			<set>
+			<ref bean="emp1"/>
+			<ref bean="emp2"/>
+			<ref bean="emp3"/>
+			
+			</set>
+		</constructor-arg>
+	</bean>
+
+</beans>

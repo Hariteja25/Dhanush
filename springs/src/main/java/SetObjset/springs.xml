@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="emp1" class="SetObjset.Employee">
+		<property name="name" value="Dhanush"></property>
+		<property name="age" value="24"></property>
+		<property name="branch" value="CSE"></property>
+	</bean>
+
+	<bean id="emp2" class="SetObjset.Employee">
+		<property name="name" value="Dhanush"></property>
+		<property name="age" value="24"></property>
+		<property name="branch" value="CSE"></property>
+	</bean>
+
+	<bean id="emp3" class="SetObjset.Employee">
+		<property name="name" value="Hari"></property>
+		<property name="age" value="24"></property>
+		<property name="branch" value="Mech"></property>
+	</bean>
+
+	<bean id="Uservice" class="SetObjset.UserService">
+		<property name="emp">
+			<set>
+				<ref bean="emp1" />
+				<ref bean="emp2" />
+				<ref bean="emp3" />
+			</set>
+		</property>
+	</bean>
+</beans>

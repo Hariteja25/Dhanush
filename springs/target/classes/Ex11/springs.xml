@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<bean id="aService" 	class="Ex11.AccountService">
+		<property name="dbName" value="oracle" />  <!-- this will internally calls the setDbName("oracle") method -->
+	</bean> 
+  
+  <!-- spring create the obj for AccountService and set the "Oracle" for dbName.
+	AccountService aService = new AccountService();
+	aService.setDbName("oracle" );
+	 -->
+   
+   
+   <bean id="uService" class="Ex11.UserService">
+		<property name="userName" value="System" />
+		<property name="accountService" ref="aService"/>
+	</bean>
+  
+  	<!-- spring create the obj for UserService and set the "system" for userName and " aService" for accountService.
+	  	UserService uService = new UserService();
+	  	uService.setUserName("system");
+	  	uService.setAccountService(aService) ;
+  	  -->
+  </beans>
